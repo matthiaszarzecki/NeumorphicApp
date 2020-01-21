@@ -38,6 +38,25 @@ class NeumorphicApp extends StatelessWidget {
                 child: Icon(Icons.forward),
               ),
               Spacer(),
+              NeumorphicContainer(
+                child: Card(
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: <Widget>[
+                      ListTile(
+                        title: NeumorphicContainer(child:Text("asds"),),
+                        leading: Icon(Icons.forward),
+                        trailing: IconButton(
+                          icon: Icon(Icons.arrow_drop_up),
+                          tooltip: 'Edit',
+                          onPressed: () {},
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              Spacer(),
             ],
           ),
         ),
