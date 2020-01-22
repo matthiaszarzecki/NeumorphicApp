@@ -44,7 +44,9 @@ class NeumorphicApp extends StatelessWidget {
                     mainAxisSize: MainAxisSize.min,
                     children: <Widget>[
                       ListTile(
-                        title: NeumorphicContainer(child:Text("asds"),),
+                        title: NeumorphicContainer(
+                          child: Text("asds"),
+                        ),
                         leading: Icon(Icons.forward),
                         trailing: IconButton(
                           icon: Icon(Icons.arrow_drop_up),
