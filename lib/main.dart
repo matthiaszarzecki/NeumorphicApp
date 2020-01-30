@@ -1,62 +1,171 @@
 import 'package:flutter/material.dart';
+import 'package:clay_containers/clay_containers.dart';
 
 void main() {
   return runApp(NeumorphicApp());
 }
 
 class NeumorphicApp extends StatelessWidget {
+  final Color baseColor = Colors.blueGrey.shade50;
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Neumorphic App',
       theme: ThemeData(
         primarySwatch: Colors.blue,
-        backgroundColor: Colors.blueGrey.shade200,
-        scaffoldBackgroundColor: Colors.blueGrey.shade200,
-        dialogBackgroundColor: Colors.blueGrey.shade200,
+        backgroundColor: baseColor,
+        scaffoldBackgroundColor: baseColor,
+        dialogBackgroundColor: baseColor,
       ),
       home: Scaffold(
         body: Center(
           child: Column(
             children: <Widget>[
               Spacer(),
-              NeumorphicContainer(
-                child: Text(
-                  'Button!',
-                  style: Typography.blackCupertino.display2,
-                ),
-              ),
-              Spacer(),
-              NeumorphicContainer(
-                child: Text(
-                  'Loooooooong Button',
-                  style: Typography.blackCupertino.display2,
-                ),
-              ),
-              Spacer(),
-              NeumorphicContainer(
-                child: Icon(Icons.forward),
-              ),
-              Spacer(),
-              NeumorphicContainer(
-                child: Card(
-                  child: Column(
-                    mainAxisSize: MainAxisSize.min,
-                    children: <Widget>[
-                      ListTile(
-                        title: NeumorphicContainer(
-                          child: Text("asds"),
-                        ),
-                        leading: Icon(Icons.forward),
-                        trailing: IconButton(
-                          icon: Icon(Icons.arrow_drop_up),
-                          tooltip: 'Edit',
-                          onPressed: () {},
-                        ),
-                      ),
-                    ],
+              Row(
+                children: <Widget>[
+                  Spacer(),
+                  NeumorphicContainer(
+                    child: Text(
+                      'Button!',
+                      style: Typography.blackCupertino.display2,
+                    ),
                   ),
-                ),
+                  Spacer(),
+                  NeumorphicContainer(
+                    child: Text(
+                      'Loooooooong Button',
+                      style: Typography.blackCupertino.display2,
+                    ),
+                  ),
+                  Spacer(),
+                ],
+              ),
+              Spacer(),
+              Row(
+                children: <Widget>[
+                  Spacer(),
+                  NeumorphicContainer(
+                    child: Icon(Icons.forward),
+                  ),
+                  Spacer(),
+                  ClayContainer(
+                    color: baseColor,
+                    height: 33,
+                    width: 33,
+                    borderRadius: 50,
+                  ),
+                  Spacer(),
+                ],
+              ),
+              Spacer(),
+              Row(
+                children: <Widget>[
+                  Spacer(),
+                  ClayContainer(
+                    color: baseColor,
+                    height: 150,
+                    width: 150,
+                    customBorderRadius: BorderRadius.only(
+                      topLeft: Radius.elliptical(150, 150),
+                      bottomRight: Radius.circular(50),
+                    ),
+                    curveType: CurveType.convex,
+                  ),
+                  Spacer(),
+                  ClayContainer(
+                    color: baseColor,
+                    height: 150,
+                    width: 150,
+                    customBorderRadius: BorderRadius.only(
+                      topRight: Radius.elliptical(150, 150),
+                      bottomLeft: Radius.circular(50),
+                    ),
+                    curveType: CurveType.convex,
+                  ),
+                  Spacer(),
+                ],
+              ),
+              Spacer(),
+              Row(
+                children: <Widget>[
+                  Spacer(),
+                  ClayContainer(
+                    color: baseColor,
+                    height: 150,
+                    width: 150,
+                    customBorderRadius: BorderRadius.only(
+                      bottomLeft: Radius.elliptical(150, 150),
+                      topRight: Radius.circular(50),
+                    ),
+                    curveType: CurveType.convex,
+                  ),
+                  Spacer(),
+                  ClayContainer(
+                    color: baseColor,
+                    height: 150,
+                    width: 150,
+                    customBorderRadius: BorderRadius.only(
+                      bottomRight: Radius.elliptical(150, 150),
+                      topLeft: Radius.circular(50),
+                    ),
+                    curveType: CurveType.convex,
+                  ),
+                  Spacer(),
+                ],
+              ),
+              Spacer(),
+              Row(
+                children: <Widget>[
+                  Spacer(),
+                  ClayContainer(
+                    emboss: true,
+                    color: baseColor,
+                    height: 150,
+                    width: 150,
+                    borderRadius: 50,
+                  ),
+                  Spacer(),
+                  ClayContainer(
+                    color: baseColor,
+                    height: 150,
+                    width: 150,
+                    borderRadius: 75,
+                    depth: 40,
+                    spread: 40,
+                  ),
+                  Spacer(),
+                ],
+              ),
+              Spacer(),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  ClayContainer(
+                    color: baseColor,
+                    height: 33,
+                    width: 33,
+                    borderRadius: 75,
+                    curveType: CurveType.concave,
+                  ),
+                  SizedBox(width: 50),
+                  ClayContainer(
+                    color: baseColor,
+                    height: 33,
+                    width: 33,
+                    borderRadius: 75,
+                    curveType: CurveType.none,
+                  ),
+                  SizedBox(width: 50),
+                  ClayContainer(
+                    color: baseColor,
+                    height: 33,
+                    width: 33,
+                    borderRadius: 75,
+                    curveType: CurveType.convex,
+                  ),
+                ],
               ),
               Spacer(),
             ],
